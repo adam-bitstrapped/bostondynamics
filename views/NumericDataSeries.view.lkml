@@ -1,5 +1,8 @@
 view: NumericDataSeries {
 
+  sql_table_name: `bd-spotsmartfactory.sfp_data.NumericDataSeries`
+  ;;
+
   dimension: messageId {
     primary_key: yes
     description: "Unique ID of the message sent from Spot"
