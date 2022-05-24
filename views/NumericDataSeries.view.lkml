@@ -1,4 +1,4 @@
-view: numeric_data_series {
+view: NumericDataSeries {
 
   dimension: messageId {
     primary_key: yes

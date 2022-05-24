@@ -21,7 +21,7 @@ persist_with: bd_spotsmartfactory_default_datagroup
 
 # To see the Explore you’re building, navigate to the Explore menu and select an Explore under "Bd Spotsmartfactory"
 
-explore: numeric_data_series {
+explore: NumericDataSeries {
   # join: numeric_data_series__meta_kv {
   #   view_label: "Numeric Data Series: Metakv"
   #   sql: LEFT JOIN UNNEST(${numeric_data_series.meta_kv}) as numeric_data_series__meta_kv ;;
