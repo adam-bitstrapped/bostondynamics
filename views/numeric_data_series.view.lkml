@@ -92,7 +92,7 @@ view: numeric_data_series {
 
   dimension: smart_gcs_url {
     type: string
-    sql: REPLACE(REPLACE(${dumb_gcs_url},'https://storage.cloud.google.com/https://storage.cloud.google.com/','https://storage.cloud.google.com/'),'https://storage.cloud.google.com/gs://','https://storage.cloud.google.com/') ;;
+    sql: REPLACE(REPLACE(REPLACE(${dumb_gcs_url},'https://storage.cloud.google.com/https://storage.cloud.google.com/','https://storage.cloud.google.com/'),'https://storage.cloud.google.com/gs://','https://storage.cloud.google.com/'),'https://storage.cloud.google.com/https://storage.googleapis.com/','https://storage.cloud.google.com/') ;;
     # html: <img src="{{value}}" height=200 width=200 /> ;;
   }
 
