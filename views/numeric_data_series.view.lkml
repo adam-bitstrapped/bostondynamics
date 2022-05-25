@@ -87,12 +87,12 @@ view: numeric_data_series {
 
   dimension: dumb_gcs_url {
     type: string
-    sql: CONCAT('https://storage.cloud.google.com/',SPLIT(SPLIT(${TABLE}.payloadQualifierJson, 'gauge-image":"')[SAFE_OFFSET(1)],'"')[SAFE_OFFSET(0)]) ;;
+    sql: CONCAT('https://storage.googleapis.com/',SPLIT(SPLIT(${TABLE}.payloadQualifierJson, 'gauge-image":"')[SAFE_OFFSET(1)],'"')[SAFE_OFFSET(0)]) ;;
   }
 
   dimension: smart_gcs_url {
     type: string
-    sql: REPLACE(REPLACE(REPLACE(${dumb_gcs_url},'https://storage.cloud.google.com/https://storage.cloud.google.com/','https://storage.cloud.google.com/'),'https://storage.cloud.google.com/gs://','https://storage.cloud.google.com/'),'https://storage.cloud.google.com/https://storage.googleapis.com/','https://storage.cloud.google.com/') ;;
+    sql: REPLACE(REPLACE(REPLACE(${dumb_gcs_url},'https://storage.googleapis.com/https://storage.cloud.google.com/','https://storage.googleapis.com/'),'https://storage.googleapis.com/gs://','https://storage.googleapis.com/'),'https://storage.googleapis.com/https://storage.googleapis.com/','https://storage.googleapis.com/') ;;
   }
 
   dimension: gcs_image {
