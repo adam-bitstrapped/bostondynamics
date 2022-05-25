@@ -85,9 +85,14 @@ view: numeric_data_series {
     sql: JSON_EXTRACT(${TABLE}.payloadQualifierJson, '$[0].metadata') ;;
   }
 
-  dimension: gcs_url {
+  dimension: dumb_gcs_url {
     type: string
-    sql: SPLIT(SPLIT(${TABLE}.payloadQualifierJson, 'gauge-image":"')[SAFE_OFFSET(1)],'"')[SAFE_OFFSET(0)] ;;
+    sql: CONACT('https://storage.cloud.google.com/',SPLIT(SPLIT(${TABLE}.payloadQualifierJson, 'gauge-image":"')[SAFE_OFFSET(1)],'"')[SAFE_OFFSET(0)]) ;;
+  }
+
+  dimension: smart_gcs_url {
+    type: string
+    sql: REPLACE(REPLACE(${dumb_gcs_url},'https://storage.cloud.google.com/https://storage.cloud.google.com/','https://storage.cloud.google.com/'),'https://storage.cloud.google.com/gs://','https://storage.cloud.google.com/') ;;
     html: <img src="{{value}}" height=200 width=200 /> ;;
   }
 
