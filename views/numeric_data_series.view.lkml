@@ -87,7 +87,7 @@ view: numeric_data_series {
 
   dimension: gcs_url {
     type: string
-    sql: SPLIT(${TABLE}.payloadQualifierJson, '"')[SAFE_OFFSET(41)] ;;
+    sql: SPLIT(${TABLE}.payloadQualifierJson, 'gauge-image":"')[SAFE_OFFSET(0)] ;;
   }
 
   dimension: payload_qualifier_kv {
