@@ -136,7 +136,7 @@ view: numeric_data_series__meta_kv {
 
   dimension: meta_key {
     type: string
-    sql: key ;;
+    sql: ${TABLE}.key ;;
   }
 
   # This field is hidden, which means it will not show up in Explore.
@@ -145,17 +145,17 @@ view: numeric_data_series__meta_kv {
   dimension: numeric_data_series__meta_kv {
     type: string
     hidden: yes
-    sql: numeric_data_series__meta_kv ;;
+    sql: ${TABLE}.numeric_data_series__meta_kv ;;
   }
 
   dimension: schema_identifier {
     type: string
-    sql: schemaIdentifier ;;
+    sql: ${TABLE}.schemaIdentifier ;;
   }
 
   dimension: meta_value {
     type: string
-    sql: value ;;
+    sql: ${TABLE}.value ;;
   }
 }
 
@@ -170,7 +170,7 @@ view: numeric_data_series__payload_kv {
 
   dimension: payload_key {
     type: string
-    sql: key ;;
+    sql: ${TABLE}.key ;;
   }
 
   # This field is hidden, which means it will not show up in Explore.
@@ -179,12 +179,12 @@ view: numeric_data_series__payload_kv {
   dimension: numeric_data_series__payload_kv {
     type: string
     hidden: yes
-    sql: numeric_data_series__payload_kv ;;
+    sql: ${TABLE}.numeric_data_series__payload_kv ;;
   }
 
   dimension: payload_value {
     type: string
-    sql: value ;;
+    sql: ${TABLE}.value ;;
   }
 }
 
@@ -199,7 +199,7 @@ view: numeric_data_series__payload_qualifier_kv {
 
   dimension: playload_qualifier_key {
     type: string
-    sql: key ;;
+    sql: ${TABLE}.key ;;
   }
 
   # This field is hidden, which means it will not show up in Explore.
@@ -208,11 +208,11 @@ view: numeric_data_series__payload_qualifier_kv {
   dimension: numeric_data_series__payload_qualifier_kv {
     type: string
     hidden: yes
-    sql: numeric_data_series__payload_qualifier_kv ;;
+    sql: ${TABLE}.numeric_data_series__payload_qualifier_kv ;;
   }
 
   dimension: playload_qualifier_value {
     type: string
-    sql: value ;;
+    sql: ${TABLE}.value ;;
   }
 }
