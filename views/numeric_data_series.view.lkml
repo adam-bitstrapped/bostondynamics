@@ -134,7 +134,7 @@ view: numeric_data_series__meta_kv {
   # A dimension is a groupable field that can be used to filter query results.
   # This dimension will be called "Key" in Explore.
 
-  dimension: key {
+  dimension: meta_key {
     type: string
     sql: key ;;
   }
@@ -153,7 +153,7 @@ view: numeric_data_series__meta_kv {
     sql: schemaIdentifier ;;
   }
 
-  dimension: value {
+  dimension: meta_value {
     type: string
     sql: value ;;
   }
@@ -168,7 +168,7 @@ view: numeric_data_series__payload_kv {
   # A dimension is a groupable field that can be used to filter query results.
   # This dimension will be called "Key" in Explore.
 
-  dimension: key {
+  dimension: payload_key {
     type: string
     sql: key ;;
   }
@@ -182,7 +182,7 @@ view: numeric_data_series__payload_kv {
     sql: numeric_data_series__payload_kv ;;
   }
 
-  dimension: value {
+  dimension: payload_value {
     type: string
     sql: value ;;
   }
@@ -197,7 +197,7 @@ view: numeric_data_series__payload_qualifier_kv {
   # A dimension is a groupable field that can be used to filter query results.
   # This dimension will be called "Key" in Explore.
 
-  dimension: key {
+  dimension: playload_qualifier_key {
     type: string
     sql: key ;;
   }
@@ -211,7 +211,7 @@ view: numeric_data_series__payload_qualifier_kv {
     sql: numeric_data_series__payload_qualifier_kv ;;
   }
 
-  dimension: value {
+  dimension: playload_qualifier_value {
     type: string
     sql: value ;;
   }
