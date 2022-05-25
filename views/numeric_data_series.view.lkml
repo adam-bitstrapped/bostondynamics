@@ -87,7 +87,7 @@ view: numeric_data_series {
 
   dimension: gcs_url {
     type: string
-    sql: SPLIT(${TABLE}.payloadQualifierJson, '"')[SAFE_OFFSET(15)] ;;
+    sql: SPLIT(${TABLE}.payloadQualifierJson, '"')[SAFE_OFFSET(40)] ;;
   }
 
   dimension: payload_qualifier_kv {
