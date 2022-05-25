@@ -98,7 +98,7 @@ view: numeric_data_series {
   dimension: gcs_image {
     type: string
     sql: ${smart_gcs_url} ;;
-    html: <img src="{{value}}" height=200 width=200 /> ;;
+    # html: <img src="{{value}}" height=200 width=200 /> ;;
   }
 
   dimension: payload_qualifier_kv {
