@@ -80,6 +80,11 @@ view: numeric_data_series {
     sql: ${TABLE}.payloadQualifierJson ;;
   }
 
+  dimension: metadata {
+    type: string
+    sql: CAST(JSON_EXTRACT(${TABLE}.payloadQualifierJson, '$[0].metadata') AS STRING)  ;;
+  }
+
   dimension: payload_qualifier_kv {
     hidden: yes
     sql: ${TABLE}.payloadQualifierKV ;;
