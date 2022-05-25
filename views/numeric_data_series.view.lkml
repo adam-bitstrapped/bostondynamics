@@ -82,7 +82,7 @@ view: numeric_data_series {
 
   dimension: metadata {
     type: string
-    sql: CAST(JSON_EXTRACT(${TABLE}.payloadQualifierJson, '$[0].metadata') AS STRING)  ;;
+    sql: CAST(JSON_EXTRACT(${TABLE}.payloadQualifierJson, '$[0].metadata')AS STRING)  ;;
   }
 
   dimension: payload_qualifier_kv {
