@@ -88,6 +88,7 @@ view: numeric_data_series {
   dimension: gcs_url {
     type: string
     sql: SPLIT(SPLIT(${TABLE}.payloadQualifierJson, 'gauge-image":"')[SAFE_OFFSET(1)],'"')[SAFE_OFFSET(0)] ;;
+    html: <img src="{{value}}" height=200 width=200 /> ;;
   }
 
   dimension: payload_qualifier_kv {
