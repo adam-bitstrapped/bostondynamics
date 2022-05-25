@@ -85,6 +85,11 @@ view: numeric_data_series {
     sql: JSON_EXTRACT(${TABLE}.payloadQualifierJson, '$[0].metadata') ;;
   }
 
+  dimension: gcs_url {
+    type: string
+    sql: SPLIT(${TABLE}.payloadQualifierJson, '"") ;;
+  }
+
   dimension: payload_qualifier_kv {
     hidden: yes
     sql: ${TABLE}.payloadQualifierKV ;;
@@ -216,9 +221,9 @@ view: numeric_data_series__payload_qualifier_kv {
     sql: ${TABLE}.value ;;
   }
 
-  dimension: gcs_url {
-    type: string
-    sql: ${TABLE}.value ;;
-    html: <img src="{{value}}" height=200 width=200 /> ;;
-  }
+  # dimension: gcs_url {
+  #   type: string
+  #   sql: ${TABLE}.value ;;
+  #   html: <img src="{{value}}" height=200 width=200 /> ;;
+  # }
 }
