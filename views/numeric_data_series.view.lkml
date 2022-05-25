@@ -87,7 +87,7 @@ view: numeric_data_series {
 
   dimension: dumb_gcs_url {
     type: string
-    sql: CONACT('https://storage.cloud.google.com/',SPLIT(SPLIT(${TABLE}.payloadQualifierJson, 'gauge-image":"')[SAFE_OFFSET(1)],'"')[SAFE_OFFSET(0)]) ;;
+    sql: CONCAT('https://storage.cloud.google.com/',SPLIT(SPLIT(${TABLE}.payloadQualifierJson, 'gauge-image":"')[SAFE_OFFSET(1)],'"')[SAFE_OFFSET(0)]) ;;
   }
 
   dimension: smart_gcs_url {
