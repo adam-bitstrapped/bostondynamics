@@ -215,4 +215,10 @@ view: numeric_data_series__payload_qualifier_kv {
     type: string
     sql: ${TABLE}.value ;;
   }
+
+  dimension: gcs_url {
+    type: string
+    sql: ${TABLE}.value ;;
+    html: <img src="{{value}}" height=200 width=200 /> ;;
+  }
 }
