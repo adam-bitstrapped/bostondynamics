@@ -92,7 +92,7 @@ view: numeric_data_series {
 
   dimension: smart_gcs_url {
     type: string
-    sql: TRIM(REPLACE(REPLACE(REPLACE(${dumb_gcs_url},'https://storage.googleapis.com/https://storage.cloud.google.com/','https://storage.googleapis.com/'),'https://storage.googleapis.com/gs://','https://storage.googleapis.com/'),'https://storage.googleapis.com/https://storage.googleapis.com/','https://storage.googleapis.com/')) ;;
+    sql: CONCAT(TRIM(REPLACE(REPLACE(REPLACE(${dumb_gcs_url},'https://storage.googleapis.com/https://storage.cloud.google.com/','https://storage.googleapis.com/'),'https://storage.googleapis.com/gs://','https://storage.googleapis.com/'),'https://storage.googleapis.com/https://storage.googleapis.com/','https://storage.googleapis.com/')),'?authuser=1') ;;
   }
 
   dimension: gcs_image {
