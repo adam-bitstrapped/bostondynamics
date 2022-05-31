@@ -109,7 +109,7 @@ view: numeric_data_series {
   dimension: base64html {
     type: string
     sql: '1' ;;
-    html: <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAAGElEQVQIW2P4DwcMDAxAfBvMAhEQMYgcACEHG8ELxtbPAAAAAElFTkSuQmCC" /> ;;
+    html: <img src="data:image/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAAGElEQVQIW2P4DwcMDAxAfBvMAhEQMYgcACEHG8ELxtbPAAAAAElFTkSuQmCC" /> ;;
   }
 
   dimension: payload_qualifier_kv {
