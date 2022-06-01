@@ -82,7 +82,7 @@ view: numeric_data_series {
 
   dimension: metadata {
     type: string
-    sql: JSON_EXTRACT(${TABLE}.payloadQualifierJson, '$[0].metadata') ;;
+    sql: JSON_EXTRACT(${TABLE}.payloadQualifierJson, 'metadata') ;;
   }
 
   dimension: dumb_gcs_url {
