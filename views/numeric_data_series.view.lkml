@@ -103,12 +103,12 @@ view: numeric_data_series {
 
   dimension: base64string {
     type: string
-    sql: JSON_EXTRACT(${TABLE}.payloadQualifierJson, '$.metadata.gauge-image-base64')
+    sql: JSON_EXTRACT(${TABLE}.payloadQualifierJson, '$.metadata.gauge-image-base64') ;;
   }
 
   dimension: base64html {
     type: string
-    sql: JSON_EXTRACT(${TABLE}.payloadQualifierJson, '$.metadata.gauge-image-base64')
+    sql: JSON_EXTRACT(${TABLE}.payloadQualifierJson, '$.metadata.gauge-image-base64') ;;
     html: <img src="data:image/gif;base64,{{value}}" height=200 width=200 />
   }
 
