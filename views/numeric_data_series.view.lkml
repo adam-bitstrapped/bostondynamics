@@ -113,6 +113,19 @@ view: numeric_data_series {
     " /> ;;
   }
 
+  dimension: message_field {
+    type: string
+    sql: '1' ;;
+    action: {
+      label: "Send Spot"
+      url:"https://us-central1-bd-spotsmartfactory.cloudfunctions.net/spotApi"
+      param:{
+        name:"name"
+        value:"this is the value"
+      }
+    }
+  }
+
   dimension: payload_qualifier_kv {
     hidden: yes
     sql: ${TABLE}.payloadQualifierKV ;;
