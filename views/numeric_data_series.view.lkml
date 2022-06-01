@@ -103,7 +103,7 @@ view: numeric_data_series {
 
   dimension: base64string {
     type: string
-    sql: JSON_EXTRACT(${TABLE}.payloadQualifierJson, '$.metadata.gauge-image-base64') ;;
+    sql: CAST(JSON_EXTRACT(${TABLE}.payloadQualifierJson, '$.metadata.gauge-image-base64') AS STRING) ;;
   }
 
   dimension: base64html {
