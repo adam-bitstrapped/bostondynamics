@@ -125,6 +125,19 @@ view: numeric_data_series {
     }
   }
 
+  dimension: gauge_description {
+    type: string
+    sql: REPLACE(JSON_EXTRACT(${TABLE}.payloadQualifierJson, '$.description'),'"','') ;;
+    action: {
+      label: "Send Spot"
+      url:"https://us-central1-bd-spotsmartfactory.cloudfunctions.net/spotApi"
+      param:{
+        name:"name"
+        value:"Check gauge: {{value}}"
+      }
+    }
+  }
+
   dimension: payload_qualifier_kv {
     hidden: yes
     sql: ${TABLE}.payloadQualifierKV ;;
