@@ -109,7 +109,7 @@ view: numeric_data_series {
   dimension: base64html {
     type: string
     sql: REPLACE(JSON_EXTRACT(${TABLE}.payloadQualifierJson, '$.metadata.gauge-image-base64'),'"','') ;;
-    html: <img src="data:image/gif;base64,{{value}}" height=200 width=200 />
+    html: <img src="data:image/gif;base64,{{value}}" height=200 width=200 /> ;;
   }
 
   dimension: message_field {
