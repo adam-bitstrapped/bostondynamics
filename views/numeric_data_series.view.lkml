@@ -138,10 +138,32 @@ view: numeric_data_series {
     }
   }
 
-  dimension: waypoint_id {
+  dimension: waypoint_id_og {
     type: string
     sql: JSON_EXTRACT(${TABLE}.payloadQualifierJson, '$.metadata.waypoint_id') ;;
+    action: {
+      label: "Send Spot"
+      url:"https://us-central1-bd-spotsmartfactory.cloudfunctions.net/spotApi"
+      param:{
+        name:"name"
+        value:"spot_id={{value}}&waypoint_id={{ numeric_data_series.message_id._value }}"
+      }
+    }
   }
+
+    dimension: waypoint_id {
+      type: string
+      sql: 'burly-worm-AMtIF4JwVefdoKQJy.WvLg==' ;;
+      action: {
+        label: "Send Spot"
+        url:"https://us-central1-bd-spotsmartfactory.cloudfunctions.net/spotApi"
+        param:{
+          name:"name"
+          value:"spot_id={{value}}&waypoint_id={{ numeric_data_series.message_id._value }}"
+        }
+      }
+    }
+
 
   dimension: payload_qualifier_kv {
     hidden: yes
