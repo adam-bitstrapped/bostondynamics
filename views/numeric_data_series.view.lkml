@@ -133,7 +133,7 @@ view: numeric_data_series {
       url:"https://us-central1-bd-spotsmartfactory.cloudfunctions.net/spotApi"
       param:{
         name:"name"
-        value:"gauge_id={{value}}"
+        value:"gauge_id={{value}}&timestamp={{numeric_data_series.event_timestamp._value}}"
       }
     }
   }
