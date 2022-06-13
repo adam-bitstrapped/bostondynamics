@@ -154,7 +154,7 @@ view: numeric_data_series {
   dimension: waypoint_id {
     case: {
       when: {
-        sql: ${TABLE}.eventTimestamp > cast('2022-06-13 00:00:00' as datetime) ;;
+        sql: ${TABLE}.eventTimestamp > cast('2022-06-13 00:00:00' as timestamp) ;;
         label: "burly-worm-AMtIF4JwVefdoKQJy.WvLg=="
       }
       else: "n/a"
