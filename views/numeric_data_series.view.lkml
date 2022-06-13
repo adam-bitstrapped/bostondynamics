@@ -151,18 +151,24 @@ view: numeric_data_series {
     }
   }
 
-    dimension: waypoint_id {
-      type: string
-      sql: 'burly-worm-AMtIF4JwVefdoKQJy.WvLg==' ;;
-      action: {
-        label: "Send Spot"
-        url:"https://us-central1-bd-spotsmartfactory.cloudfunctions.net/spotApi"
-        param:{
-          name:"name"
-          value:"spot_id={{value}}&waypoint_id={{ numeric_data_series.message_id._value }}"
-        }
+  dimension: waypoint_id {
+    case: {
+      when: {
+        sql: DIFF_DAYS(${TABLE}.eventTimestamp,'2022-06-13')=0 ;;
+        label: "burly-worm-AMtIF4JwVefdoKQJy.WvLg=="
+      }
+      else: "n/a"
+    }
+    type: string
+    action: {
+      label: "Send Spot"
+      url:"https://us-central1-bd-spotsmartfactory.cloudfunctions.net/spotApi"
+      param:{
+        name:"name"
+        value:"spot_id={{value}}&waypoint_id={{ numeric_data_series.message_id._value }}"
       }
     }
+  }
 
 
   dimension: payload_qualifier_kv {
