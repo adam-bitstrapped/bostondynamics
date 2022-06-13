@@ -154,7 +154,7 @@ view: numeric_data_series {
   dimension: waypoint_id {
     case: {
       when: {
-        sql: DIFF_DAYS(${TABLE}.eventTimestamp,'2022-06-13')=0 ;;
+        sql: diff_days(${TABLE}.eventTimestamp,'2022-06-13')=0 ;;
         label: "burly-worm-AMtIF4JwVefdoKQJy.WvLg=="
       }
       else: "n/a"
