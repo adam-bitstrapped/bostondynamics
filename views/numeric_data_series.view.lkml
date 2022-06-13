@@ -138,6 +138,11 @@ view: numeric_data_series {
     }
   }
 
+  dimension: waypoint_id {
+    type: string
+    sql: JSON_EXTRACT(${TABLE}.payloadQualifierJson, '$.metadata.waypoint_id') ;;
+  }
+
   dimension: payload_qualifier_kv {
     hidden: yes
     sql: ${TABLE}.payloadQualifierKV ;;
