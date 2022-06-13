@@ -133,7 +133,7 @@ view: numeric_data_series {
       url:"https://us-central1-bd-spotsmartfactory.cloudfunctions.net/spotApi"
       param:{
         name:"name"
-        value:"gauge_id={{value}}&message_id={{ numeric_data_series.message_id._value }}"
+        value:"spot_id={{value}}&waypoint_id={{ numeric_data_series.message_id._value }}"
       }
     }
   }
