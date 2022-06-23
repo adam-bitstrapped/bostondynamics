@@ -133,7 +133,7 @@ view: numeric_data_series {
       url:"https://us-central1-bd-spotsmartfactory.cloudfunctions.net/spotApi"
       param:{
         name:"name"
-        value:"spot_id=4949753019236336&waypoint_id=burly-worm-AMtIF4JwVefdoKQJy.WvLg=="
+        value:"4949753019236336&burly-worm-AMtIF4JwVefdoKQJy.WvLg=="
       }
     }
   }
