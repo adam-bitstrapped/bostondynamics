@@ -63,6 +63,12 @@ explore: component_data_series {
 
 explore: numeric_data_series {
   sql_always_where: ${event_timestamp_year} > 2021 AND CONTAINS_SUBSTR(${payload_qualifier_json},"bd-spotsmartfactory");;
+  always_filter: {
+    filters: {
+      field: event_timestamp_year
+      value: "last 1 year"
+    }
+  }
   join: numeric_data_series__meta_kv {
     view_label: "Numeric Data Series: Metakv"
     sql: LEFT JOIN UNNEST(${numeric_data_series.meta_kv}) as numeric_data_series__meta_kv ;;
